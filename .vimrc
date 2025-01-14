@@ -31,3 +31,10 @@ func SwitchDarkMode()
 	exe 'colorscheme ' . l:new_scheme
 	call writefile([l:new_scheme], g:scheme_file)
 endfunc
+
+" jump to the last position when reopening a file
+" From /etc/vimrc
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+		\| exe "normal! g'\"" | endif
+endif
