@@ -1,6 +1,7 @@
 set number
 set tabstop=4
 syntax on
+set hls
 map <F12> :call SwitchDarkMode()<CR>
 
 let g:lightscheme = 'shine'
